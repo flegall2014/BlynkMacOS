@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>xml/BlynkMenu.xml</file>
+        <file>icons/ico-question.png</file>
+        <file>icons/ico-bigeye.gif</file>
+        <file>icons/ico-careteye.gif</file>
+        <file>icons/ico-mouseeye.gif</file>
+        <file>icons/ico-eye.png</file>
+        <file>icons/ico-menu.png</file>
+        <file>css/style.css</file>
+        <file>icons/blynk-logo.jpg</file>
+        <file>html/About Blynk.htm</file>
+    </qresource>
+</RCC>
