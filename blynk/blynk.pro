@@ -8,18 +8,11 @@ QT       += core gui xml widgets
 
 TEMPLATE = app
 
-INCLUDEPATH += $$PWD/../utils ../singleapplication ../gammaramp ../fluxlib
+INCLUDEPATH += ../utils ../singleapplication ../gammaramp ../fluxlib
 
-CONFIG(debug, debug|release) {
-    LIBS += -L$$PWD/../bin/ -lutilsd -lsingleapplicationd ../gammaramp -lfluxlibd
-    TARGET = blynkd
-} else {
-    LIBS += -L$$PWD/../bin/ -lutils -lsingleapplication ../gammaramp -lfluxlib
-    TARGET = blynk
-}
 
 unix {
-    DESTDIR = ../bin
+    DESTDIR = ./bin
     MOC_DIR = ./moc
     OBJECTS_DIR = ./obj
 }
@@ -40,6 +33,15 @@ win32 {
     QMAKE_CLEAN *= $$DESTDIR\\*$$TARGET*
     QMAKE_CLEAN *= $$MOC_DIR\\*moc_*
     QMAKE_CLEAN *= $$OBJECTS_DIR\\*.o*
+}
+
+CONFIG(debug, debug|release) {
+    LIBS += -L$$OUT_PWD/../bin -lutilsd -lsingleapplicationd -lgammarampd -lfluxlibd
+    TARGET = blynkd
+
+} else {
+    LIBS += -L$$OUT_PWD/../bin -lutils -lsingleapplication -lgammaramp -lfluxlib
+    TARGET = blynk
 }
 
 HEADERS += \
