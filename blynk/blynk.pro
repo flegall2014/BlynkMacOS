@@ -11,10 +11,10 @@ TEMPLATE = app
 INCLUDEPATH += $$PWD/../utils ../singleapplication ../gammaramp ../fluxlib
 
 CONFIG(debug, debug|release) {
-    LIBS += -L$$PWD/../bin/ -lutilsd -lsingleapplicationd -lgammarampd -lfluxlibd
+    LIBS += -L$$PWD/../bin/ -lutilsd -lsingleapplicationd ../gammaramp -lfluxlibd
     TARGET = blynkd
 } else {
-    LIBS += -L$$PWD/../bin/ -lutils -lsingleapplication -lgammaramp -lfluxlib
+    LIBS += -L$$PWD/../bin/ -lutils -lsingleapplication ../gammaramp -lfluxlib
     TARGET = blynk
 }
 

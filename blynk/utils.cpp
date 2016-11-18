@@ -3,7 +3,7 @@
 #include <QDirIterator>
 #include <QUrl>
 #include <QFontMetrics>
-#include <QTooltip>
+#include <QToolTip>
 
 // Application:
 #include "utils.h"
